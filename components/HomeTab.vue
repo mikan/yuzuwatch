@@ -1,6 +1,6 @@
 <template>
   <div class="mt-4">
-    <div class="flex gap-2 justify-evenly flex-wrap">
+    <div class="flex gap-3 justify-evenly flex-wrap">
       <dashboard-card class="w-[32%] min-w-[120px]">
         <template #title>土壌水分</template>
         <template #content>
@@ -26,7 +26,7 @@
         </template>
       </dashboard-card>
     </div>
-    <div v-if="latestStillUrl" class="mt-4 flex items-center text-sm flex-col text-gray-500 dark:text-gray-400">
+    <div v-if="latestStillUrl" class="mt-1 flex items-center text-sm flex-col text-gray-500 dark:text-gray-400">
       <img alt="Live Picture" :src="latestStillUrl" class="w-full" />
       <div>
         撮影時刻:
