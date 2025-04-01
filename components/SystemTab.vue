@@ -83,7 +83,7 @@
                     >Amazon</nuxt-link
                   >)
                   <ul class="list-disc ml-10">
-                    <li>ユニバーサル基板に植える際はピッチがちょっと違うので少し曲げてやる必要があります。</li>
+                    <li>ユニバーサル基板に植える際はピッチがちょっと違うので足を少し曲げてやる必要があります。</li>
                   </ul>
                 </li>
               </ul>
@@ -106,7 +106,7 @@
             <nuxt-link to="https://github.com/mikan/yuzuwatch" target="_blank" class="underline">
               mikan/yuzuwatch<!--
             --></nuxt-link>
-            で公開しています。フレームワークに Nuxt.js v3 を、CSS ライブラリに Flowbite を利用しています。
+            で公開しています。フレームワークに Nuxt.js v3 を、デザインライブラリに Flowbite を利用しています。
           </p>
           <p class="mt-1">
             画像を取得しクラウド (Cloudflare R2) にアップロードするプログラムは GitHub の
