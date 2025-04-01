@@ -48,6 +48,16 @@
                     class="underline"
                     >秋月</nuxt-link
                   >)
+                  <ul class="list-disc ml-10">
+                    <li>
+                      丸ピン IC 用ソケット 1x40 (<nuxt-link
+                        to="https://akizukidenshi.com/catalog/g/g101591/"
+                        target="_blank"
+                        class="underline"
+                        >秋月</nuxt-link
+                      >)
+                    </li>
+                  </ul>
                 </li>
                 <li>
                   Raspberry Pi Zero 用ユニバーサル基板 (<nuxt-link
@@ -65,7 +75,7 @@
                         >秋月</nuxt-link
                       >)
                     </li>
-                    <li>ほか、ピンソケット、スズメッキ線、はんだ等</li>
+                    <li>ほか、スズメッキ線、はんだ等</li>
                   </ul>
                 </li>
                 <li>
