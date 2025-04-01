@@ -27,12 +27,7 @@
       </dashboard-card>
     </div>
     <div v-if="latestStillUrl" class="mt-4 flex items-center text-sm flex-col text-gray-500 dark:text-gray-400">
-      <img
-        alt="Live Picture"
-        :src="latestStillUrl"
-        :class="toggleFullWidth ? 'w-full' : 'max-w-[430px]'"
-        @click="toggleFullWidth = !toggleFullWidth"
-      />
+      <img alt="Live Picture" :src="latestStillUrl" class="w-full" />
       <div>
         撮影時刻:
         {{ stillUrlToTime(latestStillUrl).toLocaleString() }}
@@ -50,7 +45,6 @@ defineProps<{
 
 const runtimeConfig = useRuntimeConfig();
 const latestStillUrl = ref("");
-const toggleFullWidth = ref(false);
 
 const stillUrlToTime = (url: string): Date => {
   const tokens = url.split("/");
