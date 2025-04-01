@@ -100,6 +100,59 @@
               </ul>
             </li>
           </ul>
+          <p>Raspberry Pi Zero、MCP3002、Grove の配線は以下の通りです。</p>
+          <fwb-table class="py-2 w-fit">
+            <fwb-table-head>
+              <fwb-table-head-cell>ピン</fwb-table-head-cell>
+              <fwb-table-head-cell>RPi Zero</fwb-table-head-cell>
+              <fwb-table-head-cell>MCP3002</fwb-table-head-cell>
+              <fwb-table-head-cell>Grove</fwb-table-head-cell>
+            </fwb-table-head>
+            <fwb-table-body>
+              <fwb-table-row>
+                <fwb-table-cell>3.3V PWR, V<sub>DD</sub>/V<sub>REF</sub></fwb-table-cell>
+                <fwb-table-cell>17</fwb-table-cell>
+                <fwb-table-cell>8</fwb-table-cell>
+                <fwb-table-cell class="!text-left text-red-500">VCC</fwb-table-cell>
+              </fwb-table-row>
+              <fwb-table-row>
+                <fwb-table-cell>SPI MOSI, D<sub>IN</sub></fwb-table-cell>
+                <fwb-table-cell>19</fwb-table-cell>
+                <fwb-table-cell>5</fwb-table-cell>
+                <fwb-table-cell class="!text-left">-</fwb-table-cell>
+              </fwb-table-row>
+              <fwb-table-row>
+                <fwb-table-cell>SPI MISO, D<sub>OUT</sub></fwb-table-cell>
+                <fwb-table-cell>21</fwb-table-cell>
+                <fwb-table-cell>6</fwb-table-cell>
+                <fwb-table-cell class="!text-left">-</fwb-table-cell>
+              </fwb-table-row>
+              <fwb-table-row>
+                <fwb-table-cell>SPI CLK</fwb-table-cell>
+                <fwb-table-cell>23</fwb-table-cell>
+                <fwb-table-cell>7</fwb-table-cell>
+                <fwb-table-cell class="!text-left">-</fwb-table-cell>
+              </fwb-table-row>
+              <fwb-table-row>
+                <fwb-table-cell>SPI CE0, <span class="overline">CS</span>/SHDN</fwb-table-cell>
+                <fwb-table-cell>24</fwb-table-cell>
+                <fwb-table-cell>1</fwb-table-cell>
+                <fwb-table-cell class="!text-left">-</fwb-table-cell>
+              </fwb-table-row>
+              <fwb-table-row>
+                <fwb-table-cell>GND, V<sub>SS</sub></fwb-table-cell>
+                <fwb-table-cell>25</fwb-table-cell>
+                <fwb-table-cell>4</fwb-table-cell>
+                <fwb-table-cell class="!text-left">GND</fwb-table-cell>
+              </fwb-table-row>
+              <fwb-table-row>
+                <fwb-table-cell>CH0</fwb-table-cell>
+                <fwb-table-cell>-</fwb-table-cell>
+                <fwb-table-cell>2</fwb-table-cell>
+                <fwb-table-cell class="!text-left text-yellow-400">OUT</fwb-table-cell>
+              </fwb-table-row>
+            </fwb-table-body>
+          </fwb-table>
           <h2 class="pt-2 text-lg font-bold">ソースコードなど</h2>
           <p>
             Web アプリケーション部分のソースコードは GitHub の
@@ -151,6 +204,8 @@ if __name__ == "__main__":
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { FwbTable, FwbTableBody, FwbTableCell, FwbTableHead, FwbTableHeadCell, FwbTableRow } from "flowbite-vue";
+</script>
 
 <style scoped></style>
