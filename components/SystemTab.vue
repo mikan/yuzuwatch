@@ -10,9 +10,9 @@
             へ、カメラ画像は Cloudflare R2 へ格納しています。ブラウザで表示するための Web アプリケーションは Netlify
             へデプロイしています。気温と湿度のデータは最寄りのアメダスのデータをお借りしています。
           </p>
-          <div class="p-2 flex gap-4 justify-center">
-            <img src="~/assets/img/system-overview.jpg" alt="System Overview" class="max-w-[430px]" />
-            <img src="~/assets/img/system-components.jpg" alt="System Components" class="max-w-[430px]" />
+          <div class="p-2 flex gap-4 justify-center flex-wrap">
+            <img src="~/assets/img/system-overview.jpg" alt="System Overview" class="w-[48%]" />
+            <img src="~/assets/img/system-components.jpg" alt="System Components" class="w-[48%]" />
           </div>
           <h2 class="pt-2 text-lg font-bold">ハードウェアの詳細</h2>
           <p>鉢、土、機器ホルダーは近所のダイソーで購入したものです。全く同一のものが手に入る保証はありません。</p>
