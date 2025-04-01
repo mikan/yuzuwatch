@@ -2,8 +2,11 @@
   <div>
     <fwb-alert v-if="errorMessage" icon type="danger" class="mb-3">{{ errorMessage }}</fwb-alert>
     <fwb-tabs v-model="activeTab" directive="if">
-      <fwb-tab name="dashboard" title="🌱 Live">
+      <fwb-tab name="dashboard" title="🌱 現在の状態">
         <home-tab :moist-latest="moistLatest" :amedas-latest="amedasLatest" />
+      </fwb-tab>
+      <fwb-tab name="system" title="💻 システム概要">
+        <system-tab />
       </fwb-tab>
     </fwb-tabs>
   </div>
