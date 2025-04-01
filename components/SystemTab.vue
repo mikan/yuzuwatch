@@ -125,7 +125,8 @@
           </p>
           <p class="mt-1">
             土壌水分センサーの値を Raspberry Pi で取得するコードはとてもシンプルで、以下のようなものを cron
-            で回しています。
+            で回しています。なお、事前に <code>sudo raspi-config nonint do_i2c 0</code> で SPI
+            通信を有効化する必要があります (初回のみ)。
           </p>
           <pre class="p-2 text-sm">
 from gpiozero import MCP3002
