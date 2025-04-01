@@ -27,8 +27,16 @@
               >)
               <ul class="list-disc ml-10">
                 <li>
-                  Transcend pSLC SD カード (<nuxt-link to="https://amzn.to/4jcwMdi" target="_blank" class="underline"
+                  Transcend pSLC SD カード (<nuxt-link to="https://amzn.to/4l7INm9" target="_blank" class="underline"
                     >Amazon</nuxt-link
+                  >)
+                </li>
+                <li>
+                  USB AC アダプター Micro B オス 5V3A (<nuxt-link
+                    to="https://akizukidenshi.com/catalog/g/g112001/"
+                    target="_blank"
+                    class="underline"
+                    >秋月</nuxt-link
                   >)
                 </li>
               </ul>
