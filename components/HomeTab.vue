@@ -58,15 +58,15 @@ const stillUrlToTime = (url: string): Date => {
 };
 const moistColor = (moist?: number): string => {
   if (!moist) return "";
-  if (moist < 1.8) return "text-red-300";
+  if (moist < 1.8) return "text-blue-500";
   if (moist < 2.1) return "text-green-500";
-  return "text-blue-500";
+  return "text-red-300";
 };
 const moistText = (moist?: number): string => {
   if (!moist) return "-";
-  if (moist < 1.8) return "低";
+  if (moist < 1.8) return "高";
   if (moist < 2.1) return "中";
-  return "高";
+  return "低";
 };
 
 fetch(runtimeConfig.public.imgUrl + "/still/mikan/camera-a/latest.txt").then((v) =>
