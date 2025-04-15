@@ -11,7 +11,7 @@
           </div>
         </template>
       </dashboard-card>
-      <dashboard-card class="w-[32%] min-w-[120px]">
+      <dashboard-card class="w-[30%] min-w-[120px]">
         <template #title>温度</template>
         <template #content>
           <fwb-spinner v-if="!amedasLatest" size="12" class="m-auto" />
