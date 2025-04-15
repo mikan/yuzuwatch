@@ -28,7 +28,7 @@
                 >ダイソー</nuxt-link
               >)
             </li>
-            <li>メッシュカゴ (品番不明, サイズ 85x85x100)</li>
+            <li>メッシュカゴ たて型 (品番不明, サイズ 8.5cm x 8.5cm x 10cm)</li>
             <li>
               鉢底石 1.5L JAN:4550480333601 (<nuxt-link
                 to="https://jp.daisonet.com/products/4550480333601"
