@@ -4,10 +4,8 @@
 
 <script setup lang="ts">
 import { Line } from "vue-chartjs";
-import { Chart, Title, Tooltip, Legend, LineElement, BarElement, LinearScale, PointElement, TimeScale } from "chart.js";
+import "chart.js/auto";
 import "chartjs-adapter-luxon";
-
-Chart.register(Title, Tooltip, Legend, LineElement, BarElement, LinearScale, PointElement, TimeScale);
 
 const props = defineProps<{
   moistMeasurements?: Measurement[];
