@@ -173,7 +173,7 @@
             Zero の Pin 17 は MCP3002 の Pin 8 と Grove の VCC に接続)。
           </p>
           <div class="overflow-x-auto">
-            <fwb-table class="py-2 w-fit">
+            <fwb-table class="py-2 w-fit mx-auto">
               <fwb-table-head>
                 <fwb-table-head-cell>ピン</fwb-table-head-cell>
                 <fwb-table-head-cell>RPi Zero</fwb-table-head-cell>
