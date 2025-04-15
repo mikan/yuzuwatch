@@ -34,19 +34,25 @@
         ({{ relativeTime(stillUrlToTime(latestStillUrl)) }})
       </div>
     </div>
+    <div class="mt-2">
+      <fwb-spinner v-if="!moistMeasurements || !amedasMeasurements" size="12" class="m-auto" />
+      <soil-moisture-chart v-else :moist-measurements="moistMeasurements" :amedas-measurements="amedasMeasurements" />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { FwbSpinner } from "flowbite-vue";
 
-defineProps<{
-  moistLatest?: Measurement;
-  amedasLatest?: Measurement;
+const props = defineProps<{
+  moistMeasurements?: Measurement[];
+  amedasMeasurements?: Measurement[];
 }>();
 
 const runtimeConfig = useRuntimeConfig();
 const latestStillUrl = ref("");
+const moistLatest = computed(() => props.moistMeasurements?.slice(-1)[0] ?? undefined);
+const amedasLatest = computed(() => props.amedasMeasurements?.slice(-1)[0] ?? undefined);
 
 const stillUrlToTime = (url: string): Date => {
   const tokens = url.split("/");
