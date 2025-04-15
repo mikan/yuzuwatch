@@ -11,8 +11,8 @@
             画面に表示している気温と湿度のデータは最寄りのアメダスのデータをお借りしています。
           </p>
           <div class="p-2 flex gap-4 justify-center flex-wrap">
-            <img src="~/assets/img/day.jpg" alt="Day" class="w-[48%]" />
-            <img src="~/assets/img/night.jpg" alt="Night" class="w-[48%]" />
+            <img src="~/assets/img/day.jpg" alt="Day" class="md:w-[48%]" />
+            <img src="~/assets/img/night.jpg" alt="Night" class="md:w-[48%]" />
           </div>
           <h2 class="pt-2 text-lg font-bold">ハードウェアの詳細</h2>
           <p>
@@ -165,121 +165,123 @@
           </ul>
           <p>ユニバーサル基板には、Grove 端子、AD コンバーター、LED 用リレー、LED 用 USB ポートを配置しています。</p>
           <div class="p-2 flex gap-4 justify-center flex-wrap">
-            <img src="~/assets/img/io-board.jpg" alt="IO Board" class="w-[48%]" />
-            <img src="~/assets/img/io-board2.jpg" alt="IO Board" class="w-[48%]" />
+            <img src="~/assets/img/io-board.jpg" alt="IO Board" class="md:w-[48%]" />
+            <img src="~/assets/img/io-board2.jpg" alt="IO Board" class="md:w-[48%]" />
           </div>
           <p>
             Raspberry Pi Zero、MCP3002、Grove, Y14H-1C-5DS, USB の配線は以下の通りです。1行が配線1本を示します (例: RPi
             Zero の Pin 17 は MCP3002 の Pin 8 と Grove の VCC に接続)。
           </p>
-          <fwb-table class="py-2 w-fit">
-            <fwb-table-head>
-              <fwb-table-head-cell>ピン</fwb-table-head-cell>
-              <fwb-table-head-cell>RPi Zero</fwb-table-head-cell>
-              <fwb-table-head-cell>MCP3002</fwb-table-head-cell>
-              <fwb-table-head-cell>Grove</fwb-table-head-cell>
-              <fwb-table-head-cell>Y14H-1C-5DS</fwb-table-head-cell>
-              <fwb-table-head-cell>USB</fwb-table-head-cell>
-            </fwb-table-head>
-            <fwb-table-body>
-              <fwb-table-row>
-                <fwb-table-cell>5V PWR</fwb-table-cell>
-                <fwb-table-cell>4</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>VIN, NC</fwb-table-cell>
-                <fwb-table-cell class="!text-left">-</fwb-table-cell>
-              </fwb-table-row>
-              <fwb-table-row>
-                <fwb-table-cell>GND</fwb-table-cell>
-                <fwb-table-cell>6</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell class="!text-left">GND</fwb-table-cell>
-              </fwb-table-row>
-              <fwb-table-row>
-                <fwb-table-cell>3.3V PWR, V<sub>DD</sub>/V<sub>REF</sub></fwb-table-cell>
-                <fwb-table-cell>17</fwb-table-cell>
-                <fwb-table-cell>8</fwb-table-cell>
-                <fwb-table-cell class="text-red-500">VCC</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell class="!text-left">-</fwb-table-cell>
-              </fwb-table-row>
-              <fwb-table-row>
-                <fwb-table-cell>SPI MOSI, D<sub>IN</sub></fwb-table-cell>
-                <fwb-table-cell>19</fwb-table-cell>
-                <fwb-table-cell>5</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell class="!text-left">-</fwb-table-cell>
-              </fwb-table-row>
-              <fwb-table-row>
-                <fwb-table-cell>SPI MISO, D<sub>OUT</sub></fwb-table-cell>
-                <fwb-table-cell>21</fwb-table-cell>
-                <fwb-table-cell>6</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell class="!text-left">-</fwb-table-cell>
-              </fwb-table-row>
-              <fwb-table-row>
-                <fwb-table-cell>SPI CLK</fwb-table-cell>
-                <fwb-table-cell>23</fwb-table-cell>
-                <fwb-table-cell>7</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell class="!text-left">-</fwb-table-cell>
-              </fwb-table-row>
-              <fwb-table-row>
-                <fwb-table-cell>SPI CE0, <span class="overline">CS</span>/SHDN</fwb-table-cell>
-                <fwb-table-cell>24</fwb-table-cell>
-                <fwb-table-cell>1</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell class="!text-left">-</fwb-table-cell>
-              </fwb-table-row>
-              <fwb-table-row>
-                <fwb-table-cell>GND, V<sub>SS</sub></fwb-table-cell>
-                <fwb-table-cell>25</fwb-table-cell>
-                <fwb-table-cell>4</fwb-table-cell>
-                <fwb-table-cell>GND</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell class="!text-left">-</fwb-table-cell>
-              </fwb-table-row>
-              <fwb-table-row>
-                <fwb-table-cell>CH0</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>2</fwb-table-cell>
-                <fwb-table-cell class="text-yellow-400">OUT</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell class="!text-left">-</fwb-table-cell>
-              </fwb-table-row>
-              <fwb-table-row>
-                <fwb-table-cell>GPIO26</fwb-table-cell>
-                <fwb-table-cell>37</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>INPUT</fwb-table-cell>
-                <fwb-table-cell class="!text-left">-</fwb-table-cell>
-              </fwb-table-row>
-              <fwb-table-row>
-                <fwb-table-cell>GND</fwb-table-cell>
-                <fwb-table-cell>39</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>GND</fwb-table-cell>
-                <fwb-table-cell class="!text-left">-</fwb-table-cell>
-              </fwb-table-row>
-              <fwb-table-row>
-                <fwb-table-cell>COM, V<sub>BUS</sub></fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>-</fwb-table-cell>
-                <fwb-table-cell>COM</fwb-table-cell>
-                <fwb-table-cell class="!text-left text-red-500">V<sub>BUS</sub></fwb-table-cell>
-              </fwb-table-row>
-            </fwb-table-body>
-          </fwb-table>
+          <div class="overflow-x-auto">
+            <fwb-table class="py-2 w-fit">
+              <fwb-table-head>
+                <fwb-table-head-cell>ピン</fwb-table-head-cell>
+                <fwb-table-head-cell>RPi Zero</fwb-table-head-cell>
+                <fwb-table-head-cell>MCP3002</fwb-table-head-cell>
+                <fwb-table-head-cell>Grove</fwb-table-head-cell>
+                <fwb-table-head-cell>Y14H-1C-5DS</fwb-table-head-cell>
+                <fwb-table-head-cell>USB</fwb-table-head-cell>
+              </fwb-table-head>
+              <fwb-table-body>
+                <fwb-table-row>
+                  <fwb-table-cell>5V PWR</fwb-table-cell>
+                  <fwb-table-cell>4</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>VIN, NC</fwb-table-cell>
+                  <fwb-table-cell class="!text-left">-</fwb-table-cell>
+                </fwb-table-row>
+                <fwb-table-row>
+                  <fwb-table-cell>GND</fwb-table-cell>
+                  <fwb-table-cell>6</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell class="!text-left">GND</fwb-table-cell>
+                </fwb-table-row>
+                <fwb-table-row>
+                  <fwb-table-cell>3.3V PWR, V<sub>DD</sub>/V<sub>REF</sub></fwb-table-cell>
+                  <fwb-table-cell>17</fwb-table-cell>
+                  <fwb-table-cell>8</fwb-table-cell>
+                  <fwb-table-cell class="text-red-500">VCC</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell class="!text-left">-</fwb-table-cell>
+                </fwb-table-row>
+                <fwb-table-row>
+                  <fwb-table-cell>SPI MOSI, D<sub>IN</sub></fwb-table-cell>
+                  <fwb-table-cell>19</fwb-table-cell>
+                  <fwb-table-cell>5</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell class="!text-left">-</fwb-table-cell>
+                </fwb-table-row>
+                <fwb-table-row>
+                  <fwb-table-cell>SPI MISO, D<sub>OUT</sub></fwb-table-cell>
+                  <fwb-table-cell>21</fwb-table-cell>
+                  <fwb-table-cell>6</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell class="!text-left">-</fwb-table-cell>
+                </fwb-table-row>
+                <fwb-table-row>
+                  <fwb-table-cell>SPI CLK</fwb-table-cell>
+                  <fwb-table-cell>23</fwb-table-cell>
+                  <fwb-table-cell>7</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell class="!text-left">-</fwb-table-cell>
+                </fwb-table-row>
+                <fwb-table-row>
+                  <fwb-table-cell>SPI CE0, <span class="overline">CS</span>/SHDN</fwb-table-cell>
+                  <fwb-table-cell>24</fwb-table-cell>
+                  <fwb-table-cell>1</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell class="!text-left">-</fwb-table-cell>
+                </fwb-table-row>
+                <fwb-table-row>
+                  <fwb-table-cell>GND, V<sub>SS</sub></fwb-table-cell>
+                  <fwb-table-cell>25</fwb-table-cell>
+                  <fwb-table-cell>4</fwb-table-cell>
+                  <fwb-table-cell>GND</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell class="!text-left">-</fwb-table-cell>
+                </fwb-table-row>
+                <fwb-table-row>
+                  <fwb-table-cell>CH0</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>2</fwb-table-cell>
+                  <fwb-table-cell class="text-yellow-400">OUT</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell class="!text-left">-</fwb-table-cell>
+                </fwb-table-row>
+                <fwb-table-row>
+                  <fwb-table-cell>GPIO26</fwb-table-cell>
+                  <fwb-table-cell>37</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>INPUT</fwb-table-cell>
+                  <fwb-table-cell class="!text-left">-</fwb-table-cell>
+                </fwb-table-row>
+                <fwb-table-row>
+                  <fwb-table-cell>GND</fwb-table-cell>
+                  <fwb-table-cell>39</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>GND</fwb-table-cell>
+                  <fwb-table-cell class="!text-left">-</fwb-table-cell>
+                </fwb-table-row>
+                <fwb-table-row>
+                  <fwb-table-cell>COM, V<sub>BUS</sub></fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>-</fwb-table-cell>
+                  <fwb-table-cell>COM</fwb-table-cell>
+                  <fwb-table-cell class="!text-left text-red-500">V<sub>BUS</sub></fwb-table-cell>
+                </fwb-table-row>
+              </fwb-table-body>
+            </fwb-table>
+          </div>
           <h2 class="pt-2 text-lg font-bold">インフラの詳細</h2>
           <p>撮影した画像は Cloudflare R2 に保管しています。Amazon S3 互換の安価なオブジェクトストレージです。</p>
           <p>

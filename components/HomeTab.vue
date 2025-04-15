@@ -1,7 +1,7 @@
 <template>
   <div class="mt-4">
     <div class="flex gap-3 justify-evenly flex-wrap">
-      <dashboard-card class="w-[30%] min-w-[120px]">
+      <dashboard-card class="w-[30%] min-w-[100px]">
         <template #title>土壌水分</template>
         <template #content>
           <fwb-spinner v-if="!moistLatest" size="12" class="m-auto" />
@@ -11,14 +11,14 @@
           </div>
         </template>
       </dashboard-card>
-      <dashboard-card class="w-[30%] min-w-[120px]">
+      <dashboard-card class="w-[30%] min-w-[100px]">
         <template #title>温度</template>
         <template #content>
           <fwb-spinner v-if="!amedasLatest" size="12" class="m-auto" />
           <div v-else class="py-5">{{ amedasLatest?.temp_c?.toFixed(1) }}<small> °C</small></div>
         </template>
       </dashboard-card>
-      <dashboard-card class="w-[30%] min-w-[120px]">
+      <dashboard-card class="w-[30%] min-w-[100px]">
         <template #title>湿度</template>
         <template #content>
           <fwb-spinner v-if="!amedasLatest" size="12" class="m-auto" />
