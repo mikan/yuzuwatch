@@ -21,7 +21,7 @@
           </p>
           <ul class="p-2 list-disc list-inside">
             <li>
-              低面給水ポット 6号 (18cm) JAN:4550480381480 (<nuxt-link
+              底面給水ポット 6号 (18cm) JAN:4550480381480 (<nuxt-link
                 to="https://jp.daisonet.com/products/4550480381480"
                 target="_blank"
                 class="underline"
