@@ -40,7 +40,7 @@ const chartData = ref<ChartData<"line" | "bar">>({
       label: "日照",
       borderColor: alpha(CHART_COLORS.orange, 0.8),
       backgroundColor: alpha(CHART_COLORS.orange, 0.8),
-      data: props.amedasMeasurements?.map((m) => (m.sun_10min ? (m.sun_10min / 10) * 100 : null)) ?? [], // sun per 10min to percentage
+      data: props.amedasMeasurements?.map((m) => (m.sun_10min !== undefined ? (m.sun_10min / 10) * 100 : null)) ?? [], // sun per 10min to percentage
       yAxisID: "y2",
     },
     {
