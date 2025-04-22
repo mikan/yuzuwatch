@@ -78,6 +78,10 @@ const chartOptions = ref({
       max: 50,
     },
   },
+  interaction: {
+    mode: "index",
+    intersect: false,
+  },
 });
 </script>
 
