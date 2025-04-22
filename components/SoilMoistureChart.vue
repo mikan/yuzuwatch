@@ -32,7 +32,7 @@ const chartData = ref<ChartData<"line" | "bar">>({
       label: "土壌水分",
       borderColor: CHART_COLORS.blue,
       backgroundColor: CHART_COLORS.blue,
-      data: props.moistMeasurements?.map((m) => 0 - (m.moist_v ?? 0)) ?? [], // invert sign
+      data: props.moistMeasurements?.map((m) => (m.moist_v && m.moist_v > 0.1 ? 0 - m.moist_v : null)) ?? [], // invert sign
       yAxisID: "y1",
     },
     {
@@ -40,7 +40,7 @@ const chartData = ref<ChartData<"line" | "bar">>({
       label: "日照",
       borderColor: alpha(CHART_COLORS.orange, 0.8),
       backgroundColor: alpha(CHART_COLORS.orange, 0.8),
-      data: props.amedasMeasurements?.map((m) => ((m.sun_10min ?? 0) / 10) * 100) ?? [], // sun per 10min to percentage
+      data: props.amedasMeasurements?.map((m) => (m.sun_10min ? (m.sun_10min / 10) * 100 : null)) ?? [], // sun per 10min to percentage
       yAxisID: "y2",
     },
     {
@@ -48,7 +48,7 @@ const chartData = ref<ChartData<"line" | "bar">>({
       label: "気温",
       borderColor: alpha(CHART_COLORS.purple, 0.8),
       backgroundColor: alpha(CHART_COLORS.purple, 0.8),
-      data: props.amedasMeasurements?.map((m) => m.temp_c) ?? [],
+      data: props.amedasMeasurements?.map((m) => m.temp_c ?? null) ?? [],
       yAxisID: "y3",
     },
   ],
@@ -101,6 +101,9 @@ const chartOptions = ref<ChartOptions<"line" | "bar">>({
             break;
           case 1: // Sun
             label += context.parsed.y + "%";
+            break;
+          case 2: // Temperature
+            label += context.parsed.y + "°C";
             break;
           default:
             label += context.parsed.y;
