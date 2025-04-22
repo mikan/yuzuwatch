@@ -1,11 +1,12 @@
 <template>
-  <Line :data="chartData" :options="chartOptions" style="width: 100%; height: 300px" />
+  <Chart type="line" :data="chartData" :options="chartOptions" style="width: 100%; height: 300px" />
 </template>
 
 <script setup lang="ts">
-import { Line } from "vue-chartjs";
 import "chart.js/auto";
 import "chartjs-adapter-luxon";
+import { Chart } from "vue-chartjs";
+import type { ChartData, ChartOptions, ChartType, ScriptableContext } from "chart.js";
 
 const props = defineProps<{
   moistMeasurements?: Measurement[];
@@ -23,47 +24,48 @@ const CHART_COLORS = {
 };
 
 const alpha = (rgb: string, a: number): string => rgb.replace("rgb", "rgba").replace(")", ", " + String(a) + ")");
-const chartData = ref({
+const chartData = ref<ChartData<"line" | "bar">>({
   labels: props.moistMeasurements?.map((m) => new Date(m.received_at)),
   datasets: [
     {
       type: "line",
-      label: "土壌水分 (符号反転)",
+      label: "土壌水分",
       borderColor: CHART_COLORS.blue,
       backgroundColor: CHART_COLORS.blue,
-      data: props.moistMeasurements?.map((m) => 0 - (m.moist_v ?? 0)) ?? [],
-      radius: 0,
+      data: props.moistMeasurements?.map((m) => 0 - (m.moist_v ?? 0)) ?? [], // invert sign
       yAxisID: "y1",
     },
     {
       type: "bar",
-      label: "日照 (10分間)",
+      label: "日照",
       borderColor: alpha(CHART_COLORS.orange, 0.8),
       backgroundColor: alpha(CHART_COLORS.orange, 0.8),
-      data: props.amedasMeasurements?.map((m) => m.sun_10min) ?? [],
-      radius: 0,
+      data: props.amedasMeasurements?.map((m) => ((m.sun_10min ?? 0) / 10) * 100) ?? [], // sun per 10min to percentage
       yAxisID: "y2",
+    },
+    {
+      type: "line",
+      label: "気温",
+      borderColor: alpha(CHART_COLORS.purple, 0.8),
+      backgroundColor: alpha(CHART_COLORS.purple, 0.8),
+      data: props.amedasMeasurements?.map((m) => m.temp_c) ?? [],
+      yAxisID: "y3",
     },
   ],
 });
-const chartOptions = ref({
+const chartOptions = ref<ChartOptions<"line" | "bar">>({
   responsive: true,
   maintainAspectRatio: false,
+  elements: { point: { radius: 0 } },
   scales: {
     x: {
       type: "time",
-      time: {
-        tooltipFormat: "DD T",
-      },
+      time: { tooltipFormat: "DD T" },
       ticks: {
-        major: {
-          enabled: true,
-        },
-        font: function (context: any) {
+        major: { enabled: true },
+        font(context: any) {
           if (context.tick && context.tick.major) {
-            return {
-              weight: "bold",
-            };
+            return { weight: "bold" };
           }
         },
       },
@@ -71,16 +73,42 @@ const chartOptions = ref({
     y1: {
       min: -2.3,
       max: -1.4,
+      ticks: { callback: (tickValue: string | number): string => (0 - Number(tickValue)).toFixed(2) + "V" },
     },
     y2: {
       position: "right",
       display: false,
-      max: 50,
+      max: 500, // 1/5 scale
+    },
+    y3: {
+      position: "right",
+      display: false,
+      max: 150,
     },
   },
   interaction: {
     mode: "index",
     intersect: false,
+    callbacks: {
+      label: (context: ScriptableContext<ChartType>) => {
+        let label = context.dataset.label || "";
+        if (label) {
+          label += ": ";
+        }
+        switch (context.datasetIndex) {
+          case 0: // Moisture (recover inverted sign)
+            label += (0 - context.parsed.y).toFixed(2) + "V";
+            break;
+          case 1: // Sun
+            label += context.parsed.y + "%";
+            break;
+          default:
+            label += context.parsed.y;
+            break;
+        }
+        return label;
+      },
+    },
   },
 });
 </script>
