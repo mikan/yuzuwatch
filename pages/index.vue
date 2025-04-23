@@ -5,6 +5,9 @@
       <fwb-tab name="dashboard" title="🌱 現在の状態">
         <home-tab :moist-measurements="moistMeasurements" :amedas-measurements="amedasMeasurements" />
       </fwb-tab>
+      <fwb-tab name="timelapse" title="🕐 履歴">
+        <timelapse-tab />
+      </fwb-tab>
       <fwb-tab name="system" title="💻 システム概要">
         <system-tab />
       </fwb-tab>
