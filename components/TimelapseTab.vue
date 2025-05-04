@@ -73,7 +73,7 @@ const timeFromKey = (key: string): Date => {
   );
 };
 const fetchKeys = async (): Promise<string[]> =>
-  await $fetch<string[]>(runtimeConfig.public.apiUrl + "/api/ls/still/mikan/camera-a", {
+  await $fetch<string[]>(runtimeConfig.public.apiUrl + "/api/tl/still/mikan/camera-a", {
     query: { prefix: targetHour.value },
   });
 const handleError = (e: unknown) => (errorMessage.value = "データの取得に失敗しました: " + e);
