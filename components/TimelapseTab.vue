@@ -14,7 +14,7 @@
       <template v-for="key in displayKeys" :key="key">
         <li v-if="timeFromKey(key) > EPOCH" class="mb-2">
           <div class="text-center">{{ timeFromKey(key).toLocaleString() }} ({{ relativeTime(timeFromKey(key)) }})</div>
-          <img :src="runtimeConfig.public.imgUrl + '/' + key" :alt="key" loading="lazy" class="mx-auto md:w-1/2" />
+          <img :src="runtimeConfig.public.imgUrl + '/' + key" :alt="key" loading="lazy" class="mx-auto" />
         </li>
       </template>
     </ul>
