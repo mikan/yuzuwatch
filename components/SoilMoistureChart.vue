@@ -73,7 +73,7 @@ const chartOptions = ref<ChartOptions<"line" | "bar">>({
     y1: {
       min: -2.3,
       max: -1.4,
-      ticks: { callback: (tickValue: string | number): string => (0 - Number(tickValue)).toFixed(2) + "V" },
+      ticks: { callback: (tickValue: string | number): string => (0 - Number(tickValue)).toFixed(1) + "V" },
     },
     y2: {
       position: "right",
